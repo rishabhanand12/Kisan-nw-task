@@ -4,6 +4,7 @@ let mongoose = require("mongoose");
 let helmet = require("helmet");
 let logger = require("morgan");
 let createError = require("http-errors");
+let path = require('path')
 let cors = require("cors");
 require("dotenv").config();
 // importing internal dependencies
@@ -23,6 +24,7 @@ if (process.env.NODE_ENV === "development") {
   app.use(logger("dev"));
 }
 app.use(cors()); //middleware to allow cross-origin requests
+app.use(express.static("client/build")); //express middleware to serve static files
 app.use(express.json()); //express middleware to parse json
 app.use(express.urlencoded({ extended: true })); //express middleware to parse url
 
@@ -37,8 +39,18 @@ mongoose.connect(process.env.MONGO_URI, (err) => {
 
 //routing middlewares
 app.use("/api/v1/contact", contactRoute);
-app.use("/api/v1/message", messageRoute); 
+app.use("/api/v1/message", messageRoute);
 app.use("/api/v1/text", textRoute); //route to handle sms api calls
+
+if (
+  process.env.NODE_ENV === "production" ||
+  process.env.NODE_ENV === "staging"
+) {
+  
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname + "/client/build/index.html"));
+  });
+}
 
 // error handlers
 // catch 404 and forward to error handler

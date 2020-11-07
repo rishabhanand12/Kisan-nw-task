@@ -10,7 +10,7 @@ function Dashboard(props) {
     async function fetchData() {
       try {
         //  fetching the contacts data here
-        let req = await fetch("http://localhost:5000/api/v1/contact");
+        let req = await fetch("/api/v1/contact");
         if (req.status === 200) {
           let res = await req.json();
           setContacts(res.data);

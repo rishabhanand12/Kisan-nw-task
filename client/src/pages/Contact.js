@@ -15,7 +15,7 @@ function Contact(props) {
     async function fetchData() {
       try {
         let req = await fetch(
-          `http://localhost:5000/api/v1/contact/messages?name=${slug}`
+          `/api/v1/contact/messages?name=${slug}`
         );
         if (req.status === 200) {
           let res = await req.json();

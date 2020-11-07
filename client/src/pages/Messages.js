@@ -8,7 +8,7 @@ function Message(props) {
 
   useEffect(() => {
     async function fetchData() {
-      let req = await fetch("http://localhost:5000/api/v1/message");
+      let req = await fetch("/api/v1/message");
       if (req.status === 200) {
         let res = await req.json();
         setMessages(res.data);

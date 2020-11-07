@@ -19,7 +19,7 @@ function MessagePopup(props) {
         //request is not sent unless the OTP is valid
         setError("Enter a valid 6 digit number as OTP.");
       } else {
-        let req = await fetch("http://localhost:5000/api/v1/text", {
+        let req = await fetch("/api/v1/text", {
           method: "POST",
           headers: {
             "content-type": "application/json",
