@@ -37,7 +37,21 @@
   scrollbar-width: none;
 }
 
+.contact-list::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Optional: show position indicator in red */
+// ::-webkit-scrollbar-thumb {
+//   background: #ff0000;
+// }
+
 .contact-list-item {
+  position: relative;
   cursor: pointer;
   color: #000;
   padding: 0.8rem 0.5rem;
@@ -235,7 +249,7 @@
         color: #000;
         letter-spacing: 4px;
         padding: 0.8rem 2rem;
-        @media all and (max-width:736px) {
+        @media all and (max-width: 736px) {
           width: 60%;
         }
       }
@@ -292,7 +306,7 @@
   div {
     padding: 0 0.5rem;
   }
-  @media all and (max-width:736px) {
+  @media all and (max-width: 736px) {
     width: 100%;
   }
 }
