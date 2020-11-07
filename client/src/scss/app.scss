@@ -6,6 +6,10 @@
   margin: 0 auto;
 }
 
+img {
+  object-fit: cover;
+}
+
 .header {
   padding: 2rem 0;
   .logo {
