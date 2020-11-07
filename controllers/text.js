@@ -6,6 +6,7 @@ let client = twilio(process.env.ACCOUNT_SSID, process.env.AUTH_TOKEN);
 
 exports.sendText = async (req, res, next) => {
   try {
+    console.log("here");
     let { text, recepient, name } = req.body;
     let message = await client.messages.create({
       body: text,
@@ -31,6 +32,10 @@ exports.sendText = async (req, res, next) => {
       message: `Message sent`,
     });
   } catch (err) {
-    next("Message could not be sent");
+    if (err.code === 21608) {
+      next("Number not verified \n Can only send message to verified numbers");
+    } else {
+      next("Message could not be sent");
+    }
   }
 };

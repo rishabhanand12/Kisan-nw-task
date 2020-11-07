@@ -24,6 +24,10 @@ function Message(props) {
   return (
     <>
       <div className="container message-list">
+        <h2 className="font-primary text-center font-m section-heading font-bold">
+          Message List
+        </h2>
+
         {messages.map((elem) => {
           return <MessageList message={elem} />; // messagelist component renders list elements containing message information
         })}

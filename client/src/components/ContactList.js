@@ -9,11 +9,7 @@ export default function ContactList(props) {
   return (
     <>
       <Link to={`/contact/${slug}`}>
-        <li
-          className="flex align-center contact-list-item justify-center"
-          style={{ transform: `scale(${(props.id + 1.2) * 0.5})` }}
-          key={uuid()}
-        >
+        <li className="flex align-center contact-list-item " key={uuid()}>
           <div className="avatar-container">
             <img src={picture} alt="" />
           </div>

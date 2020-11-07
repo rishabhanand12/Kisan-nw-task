@@ -29,7 +29,9 @@ function Dashboard(props) {
   return (
     <>
       <section className="container ">
-        <h2 className="font-primary font-m font-bold">Contacts</h2>
+        <h2 className="font-primary text-center font-m font-bold section-heading">
+          Contact List
+        </h2>
         <div className="contact-list">
           <ul>
             {contacts.map((elem, index) => {
