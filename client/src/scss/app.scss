@@ -51,11 +51,10 @@
 // }
 
 .contact-list-item {
-  position: relative;
   cursor: pointer;
   color: #000;
   padding: 0.8rem 0.5rem;
-  margin-top: 2rem ;
+  padding-top: 2rem;
   .contact-name {
     font-size: 3rem;
   }
@@ -293,7 +292,7 @@
 
 .notification-container {
   padding: 1.5rem;
-  width: 22%;
+  width: 24%;
   position: fixed;
   top: 4rem;
   right: 4rem;

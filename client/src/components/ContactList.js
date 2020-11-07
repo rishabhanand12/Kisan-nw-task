@@ -11,7 +11,7 @@ export default function ContactList(props) {
       <Link to={`/contact/${slug}`}>
         <li
           className="flex align-center contact-list-item justify-center"
-          style={{ transform: `scale(${(props.id + 0.6) * 0.8})` }}
+          style={{ transform: `scale(${(props.id + 1.2) * 0.5})` }}
           key={uuid()}
         >
           <div className="avatar-container">
